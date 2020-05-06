@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int climbStairs(int n) {
+        if (n<=2) return n;
+        int f1=1,f2=2,f3=3;
+        for (int i=3;i<n+1;i++) {
+        //從第三个开始,就只要到n+1因为有一次用在n3=n2+n1
+        //也可以從第四开始,就要n+2了
+            f3=f1+f2;
+            f1=f2;
+            f2=f3;
+        }
+        return f3;
+    }
+};
+
+
